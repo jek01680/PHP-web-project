@@ -1,0 +1,259 @@
+﻿<!doctype html>
+<html lang="ko">
+<!페이지 제목>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="UTF-8" />
+    <title></title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+    <link href="default.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+
+    <!--[if IE 6]>
+    <link href="default_ie6.css" rel="stylesheet" type="text/css" />
+    <![endif]-->
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header-wrapper">
+            <head>
+                <meta charset="utf-8" />
+                <title>CSS</title>
+                <style>
+                    #header {
+                        width: 1000px;
+                        margin: 0px auto;
+                    }
+
+                    #logo {
+                        font-family: Calibri;
+                        font-style: italic;
+                        font-weight: lighter;
+                        margin-top: 300px;
+                        margin-left: 250px;
+                        width: 500px;
+                    }
+                </style>
+            </head>
+            <div id="header" class="container">
+                <div id="logo">
+                    <h1><a href="#">'4' to 世明 </a></h1>
+                    <p>by.computer science</p>
+                </div>
+            </div>
+            <div id="menu" class="container">
+                <ul>
+                    <li class="current_page_item"><a href="index.html" target="_blank" accesskey="1" title="">홈페이지</a></li>
+                    <li><a href="intro.html" target="_blank" accesskey="1" title="">소개 및 이용안내</a></li>
+                    <li><a href="dorcount.html" target="_blank" accesskey="2" title="">기숙사</a></li>
+                    <li><a href="lecevalu.html" target="_blank" accesskey="3" title="">강의</a></li>
+                    <li><a href="delivery.html" target="_blank" accesskey="4" title="">배달음식</a></li>
+                    <li><a href="http://its.okjc.net/m01/map?category=1" target="_blank" accesskey="5" title="">31번 버스</a></li>
+                    <li><a href="log.html" target="_blank" accesskey="6" title="">로그인/회원가입</a></li>
+                </ul>
+            </div>
+        </div>
+</body>
+
+<!페이지 section>
+<head>
+    <meta charset="utf-8">
+    <title>CSS</title>
+    <style>
+        #jb-container {
+            width: 1160px;
+            margin: 0px auto;
+            padding: 20px;
+            border: 1px solid #bcbcbc;
+        }
+
+        #jb-content {
+            width: 860px;
+            padding: 20px;
+            margin-bottom: 20px;
+            float: right;
+            border: 1px solid #bcbcbc;
+        }
+
+        #jb-sidebar {
+            width: 200px;
+            padding: 20px;
+            margin-bottom: 20px;
+            float: left;
+            border: 1px solid #bcbcbc;
+        }
+
+        #jb-footer {
+            clear: both;
+            padding: 5px;
+            border: 1px solid #bcbcbc;
+        }
+    </style>
+</head>
+<body>
+    <div id="jb-container">
+        <div id="jb-content">
+            <h2> 기숙사 합불 예측</h2>
+            직전 학기 학점:
+            <input type="text" id="grade" />
+            <br /><br />
+
+            거주지:
+            <input type="radio" name="home" value="14" checked="checked" />제천, 영월, 단양
+            <input type="radio" name="home" value="16" />원주, 충주
+            <input type="radio" name="home" value="18" />서울, 성남, 수원, 용인, 부천, 이천 등
+            <input type="radio" name="home" value="20" />그 외 지역
+            <br /><br />
+
+            상벌점:
+            <input type="number" id="dscore" value="0" />
+            <br /><br />
+
+            소득분위:
+            <input type="range" id="money" min="1" max="10" step="1" />분위
+            <br /><br />
+
+            <input id="result" /><br />
+            <input type="button" value="계산" id="checkBtn" onclick="calc();" />
+
+            <script type="text/javascript">
+		    function calc() {
+		        var x = document.getElementById("grade").value;
+		        x = (x / 4.5) * 40;
+
+		        var home = $('input:radio[name="home"]:checked').val();
+		        var y=(home*1);
+
+		        var z = document.getElementById("dscore").value;
+		        z = (30 + z * 1);
+
+		        var q = document.getElementById("money").value;
+		        q = 10 - (q * 1);
+
+		        result = (y + x + z + q);
+		        document.getElementById("result").value = result;
+		    }
+            </script>
+        </div>
+        <!수직메뉴바생성>
+        <style>
+            body {
+                margin: 20px auto;
+                padding: 0;
+                font-family: "맑은 고딕";
+                font-size: 0.9em;
+            }
+
+            ul#navi {
+                width: 200px;
+                text-indent: 10px;
+            }
+
+                ul#navi, ul#navi ul {
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+                }
+
+            li.group {
+                margin-bottom: 3px;
+            }
+
+                li.group div.title {
+                    height: 35px;
+                    line-height: 35px;
+                    background: #f1e020;
+                    cursor: pointer;
+                }
+
+            ul.sub li {
+                margin-bottom: 2px;
+                height: 35px;
+                line-height: 35px;
+                background: #f4f4f4;
+                cursor: pointer;
+            }
+
+                ul.sub li a {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    text-decoration: none;
+                    color: #000;
+                }
+
+                ul.sub li:hover {
+                    background: #cf0;
+                }
+            #smdor {
+                color: midnightblue;
+                margin-left: 340px;
+                margin-right: 100px; 
+                font-size: 1.2em;
+                text-decoration: none;
+            }
+            #smcyb{
+                color: midnightblue;
+                font-size: 1.2em;
+                text-decoration: none;
+            }
+           
+            
+        </style>
+        <div id="jb-sidebar">
+            <ul id="navi">
+                <li class="group">
+                    <div class="title">기숙사</div>
+                    <ul class="sub">
+                        <li><a href="dorcount.html">기숙사 합|불 예측</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div id="jb-footer">
+            <a id="smdor" href="http://www.semyung.ac.kr/kor/sub05_03_01.do">세명대학교 기숙사 안내</a>
+            <a id="smcyb" href="http://www.semyung.ac.kr/cyber/index.html">세명대학교 사이버 투어</a>
+        </div>
+    </div>
+
+    <div id="portfolio-wrapper">
+        <div id="portfolio" class="container">
+            <div class="title">
+                <h2>세명대학교 컴퓨터학부 캡스톤 디자인 수업</h2>
+                <span class="byline">Ich habe alles alleine gemacht.</span>
+            </div>
+            <div class="column1">
+                <div class="box">
+                    <h3>Leader/Design</h3>
+                    <p>ㅈㅅㅎ</p>
+                    <a href="#" class="button">문의/이메일</a>
+                </div>
+            </div>
+            <div class="column2">
+                <div class="box">
+                    <h3>Design</h3>
+                    <p>ㅅㅇㅅ</p>
+                    <a href="#" class="button">문의/이메일</a>
+                </div>
+            </div>
+            <div class="column3">
+                <div class="box">
+                    <h3>Data Base</h3>
+                    <p>ㅊㅁㄱ</p>
+                    <a href="#" class="button">문의/이메일</a>
+                </div>
+            </div>
+            <div class="column4">
+                <div class="box">
+                    <h3>Main</h3>
+                    <p>ㅈㅇㄱ</p>
+                    <a href="#" class="button">문의/이메일</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
