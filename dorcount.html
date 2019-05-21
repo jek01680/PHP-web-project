@@ -10,6 +10,7 @@
     <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
     <link href="default.css" rel="stylesheet" type="text/css" media="all" />
     <link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!--[if IE 6]>
     <link href="default_ie6.css" rel="stylesheet" type="text/css" />
@@ -90,54 +91,305 @@
             padding: 5px;
             border: 1px solid #bcbcbc;
         }
+        #jb-moreInfo {
+            width: 800px;
+            padding: 20px;
+            margin-bottom: 20px;
+            margin-top:80px;
+            float: right;
+            border: none;
+        }
     </style>
+    <style type="text/css">
+        .form-style-5 {
+            max-width: 500px;
+            padding: 10px 20px;
+            background: #f4f7f8;
+            margin: 10px auto;
+            padding: 20px;
+            background: #f4f7f8;
+            border-radius: 8px;
+            font-family: Calibri;
+        }
+
+        .form-style-5 fieldset {
+            border: none;
+        }
+
+        .form-style-5 legend {
+            font-size: 1.4em;
+            margin-bottom: 10px;
+        }
+
+        .form-style-5 label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+            .form-style-5 input[type="text"],
+            .form-style-5 input[type="number"],
+            .form-style-5 textarea,
+            .form-style-5 select {
+                font-family: Calibri;
+                background: rgba(255,255,255,.1);
+                border: none;
+                border-radius: 4px;
+                font-size: 15px;
+                margin: 0;
+                outline: 0;
+                padding: 10px;
+                width: 100%;
+                box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                background-color: #e8eeef;
+                color: #8a97a0;
+                -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+                box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+                margin-bottom: 30px;
+            }
+        
+                .form-style-5 input[type="text"]:focus,
+                .form-style-5 input[type="number"]:focus,
+                .form-style-5 textarea:focus,
+                .form-style-5 select:focus {
+                    background: #d2d9dd;
+                }
+
+        .form-style-5 select {
+            -webkit-appearance: menulist-button;
+            height: 40px;
+        }
+
+        .form-style-5 .number {
+            background: #1abc9c;
+            color: #fff;
+            height: 30px;
+            width: 30px;
+            display: inline-block;
+            font-size: 0.8em;
+            margin-right: 4px;
+            line-height: 30px;
+            text-align: center;
+            text-shadow: 0 1px 0 rgba(255,255,255,0.2);
+            border-radius: 15px 15px 15px 0px;
+        }
+
+        .form-style-5 input[type="submit"],
+        .form-style-5 input[type="button"] {
+            position: relative;
+            display: block;
+            padding: 19px 39px 18px 39px;
+            color: #FFF;
+            margin: 0 auto;
+            background: #1abc9c;
+            font-size: 18px;
+            text-align: center;
+            font-style: normal;
+            width: 100%;
+            border: 1px solid #16a085;
+            border-width: 1px 1px 3px;
+            margin-bottom: 10px;
+        }
+
+            .form-style-5 input[type="submit"]:hover,
+            .form-style-5 input[type="button"]:hover {
+                background: #109177;
+            }
+
+
+        .form-style-4 {
+            width: 450px;
+            font-size: 16px;
+            background: #1abc9c;
+            padding: 30px 30px 15px 30px;
+            margin-left: 135px;
+            border: 5px solid #d2d9dd;
+        }
+
+            .form-style-4 input[type=submit],
+            .form-style-4 input[type=button],
+            .form-style-4 input[type=text],
+            .form-style-4 textarea,
+            .form-style-4 label {
+                font-family: Georgia, Calibri,"Times New Roman", Times, serif;
+                font-size: 16px;
+                color: #fff;
+            }
+
+            .form-style-4 label {
+                display: block;
+                margin-bottom: 10px;
+            }
+
+                .form-style-4 label > span {
+                    display: inline-block;
+                    float: left;
+                    width: 150px;
+                }
+
+            .form-style-4 input[type=text],
+            .form-style-4 textarea {
+                font-style: normal;
+                padding: 0px 0px 0px 0px;
+                background: transparent;
+                outline: none;
+                border: none;
+                border-bottom: 1px dashed #FFF;
+                width: 275px;
+                overflow: hidden;
+                resize: none;
+                height: 20px;
+            }
+
+                .form-style-4 textarea:focus,
+                .form-style-4 input[type=text]:focus,
+                .form-style-4 input[type=email]:focus,
+                .form-style-4 input[type=email] :focus {
+                    border-bottom: 1px dashed #D9FFA9;
+                }
+
+            .form-style-4 input[type=submit],
+            .form-style-4 input[type=button] {
+                background: #576E86;
+                border: none;
+                padding: 8px 10px 8px 10px;
+                border-radius: 5px;
+                color: #A8BACE;
+            }
+
+                .form-style-4 input[type=submit]:hover,
+                .form-style-4 input[type=button]:hover {
+                    background: #394D61;
+                }
+
+</style>
 </head>
+
 <body>
     <div id="jb-container">
         <div id="jb-content">
-            <h2> 기숙사 합불 예측</h2>
-            직전 학기 학점:
-            <input type="text" id="grade" />
-            <br /><br />
+            <h2 style="text-align:center">기숙사 합불 예측</h2><br />
+            <div class="form-style-5">
+                <form name="frmData" id="frmData" method="post">
+                    <fieldset>
 
-            거주지:
-            <input type="radio" name="home" value="14" checked="checked" />제천, 영월, 단양
-            <input type="radio" name="home" value="16" />원주, 충주
-            <input type="radio" name="home" value="18" />서울, 성남, 수원, 용인, 부천, 이천 등
-            <input type="radio" name="home" value="20" />그 외 지역
-            <br /><br />
+                        <legend><span class="number">1</span>학사 정보</legend>
 
-            상벌점:
-            <input type="number" id="dscore" value="0" />
-            <br /><br />
+                        <input type="text" id="grade" name="grade" placeholder="직전 학기 학점 *">
 
-            소득분위:
-            <input type="range" id="money" min="1" max="10" step="1" />분위
-            <br /><br />
+                        <input type="number" id="dscore" name="dscore" placeholder="직전 학기 생활관 점수 *">
 
-            <input id="result" /><br />
-            <input type="button" value="계산" id="checkBtn" onclick="calc();" />
+                        <input type="number" id="money" name="money" placeholder="소득 분위 *  숫자만 입력해 주세요 ">
+
+                        <br />
+                        <legend><span class="number">2</span>거주지 정보</legend>
+                        <input type="radio" id="home" name="home" value="14" checked="checked" />제천, 영월, 단양<br />
+                        <input type="radio" id="home" name="home" value="16" />원주, 충주<br />
+                        <input type="radio" id="home" name="home" value="18" />서울, 성남, 수원, 용인, 부천, 이천 등<br />
+                        <input type="radio" id="home" name="home" value="20" />그 외 지역<br />
+                        <br />
+                        <label for="dorm">기숙사:</label>
+                        <select id="dorm" name="dorm">
+                            <optgroup label="남">
+                                <option value="1" checked="checked">청룡</option>
+                                <option value="2">예지</option>
+                                <option value="3">인성</option>
+                                <option value="4">비룡</option>
+                            </optgroup>
+                            <optgroup label="여">
+                                <option value="5">청풍</option>
+                                <option value="6">세명</option>
+                            </optgroup>
+
+                        </select>
+                    </fieldset>
+                    <input type="button" name="calc" value="계산" onclick="function calc()"/>
+                    <input type="submit" name="submit" value="결과 보기" onclick="function openPop()"/>
+                </form>
+            </div>
 
             <script type="text/javascript">
-		    function calc() {
-		        var x = document.getElementById("grade").value;
-		        x = (x / 4.5) * 40;
+                    function calc() {
+                        var x = document.getElementById("grade").value;
+                        x = (x / 4.5) * 40;
 
-		        var home = $('input:radio[name="home"]:checked').val();
-		        var y=(home*1);
+                        var home = $('input:radio[name="home"]:checked').val();
+                        var y = (home * 1);
 
-		        var z = document.getElementById("dscore").value;
-		        z = (30 + z * 1);
+                        var z = document.getElementById("dscore").value;
 
-		        var q = document.getElementById("money").value;
-		        q = 10 - (q * 1);
+                        if (z >= 0 && z <= 5) { z == 1; }
+                        else if (z >= 6 && z <= 10) { z == 2; }
+                        else if (z >= 11 && z <= 15) { z == 3; }
+                        else if (z >= 16 && z <= 19) { z ==4;}
+                        else if (z >= 20 && z <= 23) { z == 5; }
+                        else if (z >= 24 && z <= 30) { z == 6; }
+                        else if (z >= 31 && z <= 35) { z == 7; }
+                        else if (z >= 36 && z <= 40) { z == 8; }
+                        else if (z >= 41 && z <= 50) { z == 9; }
+                        else if (z > 50) { z == 10; }
+                        z = (30 + z * 1);
 
-		        result = (y + x + z + q);
-		        document.getElementById("result").value = result;
-		    }
+                        var q = document.getElementById("money").value;
+                        q = 10 - (q * 1);
+
+                        result = (y + x + z + q);
+                        document.getElementById("result").value = result;
+                    }
+                    //function openPop() {
+                    //    var pop_title = "result";
+                    //    window.open("", pop_title);
+                    //    var frmData = document.frmData;
+                    //    frmData.target = pop_title;
+                    //    frmData.action = "resultPop.html";
+
+                    //    frmData.submit();
+                    //}                   
             </script>
-        </div>
+            
+            <div id="jb-moreInfo" >
+                
+                <h2 style="text-align:center">추가정보 입력</h2>
+                <form class="form-style-4" action="" method="post">
+                    <label for="grade">
+                        <span>학점</span><input type="text" id="grade" name="grade" placeholder="숫자만 입력" required="true">
+                    </label>
+                    <label for="dscore">
+                        <span>생활관 점수</span><input type="text" id="dscore" name="dscore" placeholder="상점벌점 합산 결과" required="true">
+                    </label>
+                    
+                    <label for="money">
+                    <span>소득분위</span><input type="text" id="money" name="money" placeholder="숫자만 입력"required="true">
+                    </label>
+                    <label for="dorm">
+                        <span>기숙사</span><input type="text" id="dorm" name="dorm" placeholder="예) 세명"required="true" />
+                    </label>
+                    <label for="home">
+                        <span>거주지</span>
+                        </br><input type="radio" id="home" name="home" value="14" checked="checked" />제천, 영월, 단양<br />
+                        <input type="radio" id="home" name="home" value="16" />원주, 충주<br />
+                        <input type="radio" id="home" name="home" value="18" />서울, 성남, 수원, 용인, 부천, 이천 등<br />
+                        <input type="radio" id="home" name="home" value="20" />그 외 지역<br />
+                        <br />
+                    </label>  
+                    <label for="more">
+                        <span>합불 및 추가합격</span><input type="text" id="more" name="more" placeholder="합, 불, 추합 으로 기재" required="true"></textarea>
+                    </label>
+                    <label>
+                        <span> </span><input type="submit" value="저장"/>
+                    </label>
+                    <h6>추가로 입력된 정보는 데이터 베이스에 저장 되어 추후 정확도를 높이는데 도움을 줍니다.</h6>
+                </form>
+                
+                </br>
+                <h5 style="text-align:center">이 프로그램의 결과는 정확하다고 할 수 없으며 지원 사항을 결정하는데 참고용으로만 사용하시길 바랍니다.</h5style="text-align:center">
+            
+            </div>
+        </div>        
+        
         <!수직메뉴바생성>
+
         <style>
             body {
                 margin: 20px auto;
@@ -187,20 +439,20 @@
                 ul.sub li:hover {
                     background: #cf0;
                 }
+
             #smdor {
                 color: midnightblue;
                 margin-left: 340px;
-                margin-right: 100px; 
+                margin-right: 100px;
                 font-size: 1.2em;
                 text-decoration: none;
             }
-            #smcyb{
+
+            #smcyb {
                 color: midnightblue;
                 font-size: 1.2em;
                 text-decoration: none;
             }
-           
-            
         </style>
         <div id="jb-sidebar">
             <ul id="navi">
